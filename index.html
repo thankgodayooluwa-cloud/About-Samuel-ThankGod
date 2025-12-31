@@ -1,94 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About Samuel ThankGod</title>
+<meta charset="UTF-8">
+<title>About Me</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #eef1f5;
-            margin: 0;
-            padding: 0;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
+<style>
+:root {
+    --bg: #f9fafb;
+    --text: #1f2933;
+    --card: #ffffff;
+    --accent: #2563eb;
+}
 
-        .profile-img {
-            display: block;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-        }
+body.dark {
+    --bg: #0f172a;
+    --text: #e5e7eb;
+    --card: #1e293b;
+    --accent: #60a5fa;
+}
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        p {
-            text-align: center;
-            color: #555;
-            line-height: 1.6;
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
 
-        h2 {
-            color: #444;
-            margin-top: 30px;
-        }
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
 
-        ul {
-            color: #555;
-        }
+/* Dark Mode Button */
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--card);
+    color: var(--text);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #777;
-        }
-    </style>
+/* Sections */
+section {
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+}
+
+.hero img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 2.7rem;
+}
+
+.hero p {
+    opacity: 0.8;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: var(--accent);
+    margin: 0 10px;
+    font-size: 1.4rem;
+}
+
+/* ABOUT */
+.about p {
+    max-width: 800px;
+}
+
+/* PORTFOLIO */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.project {
+    background: var(--card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project div {
+    padding: 15px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    opacity: 0.7;
+    margin-top: 50px;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <img src="images/tg.jpeg" alt="My Photo" class="profile-img">
+<button class="toggle" onclick="toggleDarkMode()">🌙</button>
 
-        <h1>Hi, I'm Samuel ThankGod</h1>
+<div class="container">
 
-        <p>
-            I am a student passionate about technology, Web design and UI/UX designing.I'm a 300 level student of Bowen university, I love playing football. I'm a Christian and a lover of Jesus, and passionate about the word of God.
-            This webpage was created using HTML and CSS as part of my assignment.
-        </p>
+<!-- HERO -->
+<section class="hero">
+    <img src="images/profile.jpeg" alt="Profile">
+    <h1>Hello, I’m Samuel ThankGod</h1>
+    <p>Web Designer • UI/UX Designer • Tech Enthusiast</p>
 
-        <h2>My Interests</h2>
-        <ul>
-            <li>UI/UX Design</li>
-            <li>Web Design</li>
-            <li>Design</li>
-            <li>Technology</li>
-        </ul>
-
-        <h2>My Skills</h2>
-        <ul>
-            <li>UI/UX Design</li>
-            <li>HTML & CSS</li>
-            <li>JavaScript Basics</li>
-            <li>GitHub</li>
-        </ul>
-
-        <footer>
-            <p>© 2025 | Designed by Samuel ThankGod</p>
-        </footer>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+    <h2>About Me</h2>
+    <p>
+        I am a passionate UI/UX and web designer who enjoys designing clean,
+        modern, and responsive websites using Figma, Framer, and HTML5.
+        This page was created as part of my academic assignment.
+    </p>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio">
+    <h2>My Projects</h2>
+
+    <div class="portfolio-grid">
+        <div class="project">
+            <img src="images/project1.png">
+            <div>
+                <h3>Zeto Foods </h3>
+                <p>Mordern User Interface design for ZETO foods.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="images/project2.png">
+            <div>
+                <h3>Veggies Bites </h3>
+                <p>Responsive landing page design for Veggies bites.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="images/project3.png">
+            <div>
+                <h3>Vegan snacks</h3>
+                <p>Vegan snacks landing page.</p>
+                <p>This is a modern responsive landing page for snacks company</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 • Designed by Samuel ThankGod
+</footer>
+
+</div>
+
+<script>
+/* Scroll Animations */
+const sections = document.querySelectorAll("section");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.2 });
+
+sections.forEach(section => observer.observe(section));
+
+/* Dark Mode Toggle */
+function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
